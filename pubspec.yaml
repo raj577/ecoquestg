@@ -24,14 +24,15 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1 # Make sure you have the correct version here
 
 flutter:
   uses-material-design: true
-  
+
   assets:
     - assets/images/
     - assets/animations/
-  
+
   fonts:
     - family: ComicNeue
       fonts:
@@ -39,3 +40,8 @@ flutter:
         - asset: assets/fonts/ComicNeue-Bold.ttf
           weight: 700
 
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/dsfdf.png"

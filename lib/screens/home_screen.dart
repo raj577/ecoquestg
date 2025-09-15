@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-// import 'package:url_launcher/url_launcher.dart'; // Add this package to your pubspec.yaml
 import '../utils/quiz_data.dart';
 import 'category_screen.dart';
 import 'quiz_screen.dart';
