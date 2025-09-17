@@ -39,11 +39,11 @@ class _ResultScreenState extends State<ResultScreen>
       vsync: this,
     );
 
-    // Start animations
+
     _scoreController.forward();
     _celebrationController.forward();
     
-    // Start confetti if good score
+
     if (widget.result.percentage >= 70) {
       Future.delayed(const Duration(milliseconds: 500), () {
         _confettiController.play();
@@ -75,7 +75,7 @@ class _ResultScreenState extends State<ResultScreen>
             ),
           ),
           
-          // Main content
+
           SafeArea(
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(20),
@@ -83,29 +83,28 @@ class _ResultScreenState extends State<ResultScreen>
                 children: [
                   const SizedBox(height: 20),
                   
-                  // Result Icon and Title
+
                   _buildResultHeader(),
                   
                   const SizedBox(height: 30),
-                  
-                  // Score Card
+
                   _buildScoreCard(),
                   
                   const SizedBox(height: 30),
                   
-                  // Stats Cards
+
                   _buildStatsCards(),
                   
                   const SizedBox(height: 30),
                   
-                  // Action Buttons
+
                   _buildActionButtons(),
                 ],
               ),
             ),
           ),
           
-          // Confetti
+
           Align(
             alignment: Alignment.topCenter,
             child: ConfettiWidget(
@@ -415,7 +414,7 @@ class _ResultScreenState extends State<ResultScreen>
         
         const SizedBox(height: 16),
         
-        // Home Button
+
         SizedBox(
           width: double.infinity,
           height: 56,

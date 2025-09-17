@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    // Navigate to home screen after animation
+
     Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
@@ -85,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Animated Earth Icon
+
               AnimatedBuilder(
                 animation: _controller,
                 builder: (context, child) {
@@ -126,7 +126,7 @@ class _SplashScreenState extends State<SplashScreen>
               
               const SizedBox(height: 40),
               
-              // Animated Title
+
               AnimatedBuilder(
                 animation: _fadeAnimation,
                 builder: (context, child) {
@@ -173,7 +173,7 @@ class _SplashScreenState extends State<SplashScreen>
               
               const SizedBox(height: 60),
               
-              // Loading Animation
+
               AnimatedBuilder(
                 animation: _fadeAnimation,
                 builder: (context, child) {

@@ -19,7 +19,7 @@ class CustomProgressBar extends StatelessWidget {
     
     return Column(
       children: [
-        // Progress text
+
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -44,7 +44,7 @@ class CustomProgressBar extends StatelessWidget {
         
         const SizedBox(height: 12),
         
-        // Progress bar
+
         Container(
           width: double.infinity,
           height: 8,
@@ -54,7 +54,7 @@ class CustomProgressBar extends StatelessWidget {
           ),
           child: Stack(
             children: [
-              // Background
+
               Container(
                 width: double.infinity,
                 height: 8,
@@ -64,7 +64,7 @@ class CustomProgressBar extends StatelessWidget {
                 ),
               ),
               
-              // Progress fill
+
               AnimatedBuilder(
                 animation: animationController,
                 builder: (context, child) {
@@ -100,7 +100,7 @@ class CustomProgressBar extends StatelessWidget {
         
         const SizedBox(height: 8),
         
-        // Progress dots
+
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(

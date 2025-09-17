@@ -6,7 +6,7 @@ class QuizQuestion {
   final String explanation;
   final String imagePath;
   final String category;
-  final int difficulty; // 1-3 (easy to hard)
+  final int difficulty;
 
   const QuizQuestion({
     required this.id,

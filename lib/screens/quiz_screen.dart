@@ -66,7 +66,7 @@ class _QuizScreenState extends State<QuizScreen>
     
     return Scaffold(
 
-      // Confetti overlay
+
       body: Stack(
         children: [
           Container(
@@ -136,7 +136,7 @@ class _QuizScreenState extends State<QuizScreen>
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
-          // Top row with back button and score
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -262,7 +262,7 @@ class _QuizScreenState extends State<QuizScreen>
       _confettiController.play();
     }
     
-    // Auto-advance after a delay
+
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted && _isAnswered) {
         _nextQuestion();
@@ -278,7 +278,7 @@ class _QuizScreenState extends State<QuizScreen>
         _selectedAnswer = null;
       });
       
-      // Reset and restart animations
+
       _questionController.reset();
       _progressController.forward();
       _questionController.forward();

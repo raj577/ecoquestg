@@ -22,20 +22,20 @@ class QuestionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Question Image
+
         _buildQuestionImage(),
         
         const SizedBox(height: 20),
         
-        // Question Text
+
         _buildQuestionText(),
         
         const SizedBox(height: 24),
         
-        // Answer Options
+
         _buildAnswerOptions(),
         
-        // Explanation (shown after answering)
+
         if (isAnswered) ...[
           const SizedBox(height: 20),
           _buildExplanation(),

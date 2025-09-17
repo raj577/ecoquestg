@@ -3,7 +3,7 @@ import '../models/quiz_question.dart';
 class QuizData {
   static List<QuizQuestion> getAllQuestions() {
     return [
-      // Recycling Questions
+
       QuizQuestion(
         id: 'recycle_1',
         question: 'Which of these items can be recycled?',
@@ -14,6 +14,7 @@ class QuizData {
         category: 'Recycling',
         difficulty: 1,
       ),
+
       QuizQuestion(
         id: 'recycle_2',
         question: 'What are the 3 Rs of environmental protection?',
@@ -25,7 +26,7 @@ class QuizData {
         difficulty: 1,
       ),
       
-      // Water Conservation Questions
+
       QuizQuestion(
         id: 'water_1',
         question: 'How can you save water at home?',
@@ -47,7 +48,7 @@ class QuizData {
         difficulty: 2,
       ),
       
-      // Energy Conservation Questions
+
       QuizQuestion(
         id: 'energy_1',
         question: 'Which is a renewable energy source?',
@@ -69,7 +70,7 @@ class QuizData {
         difficulty: 1,
       ),
       
-      // Wildlife and Biodiversity Questions
+
       QuizQuestion(
         id: 'wildlife_1',
         question: 'Which animal is most affected by melting ice caps?',
@@ -91,7 +92,7 @@ class QuizData {
         difficulty: 2,
       ),
       
-      // Pollution Questions
+
       QuizQuestion(
         id: 'pollution_1',
         question: 'What causes air pollution?',
@@ -113,7 +114,7 @@ class QuizData {
         difficulty: 1,
       ),
       
-      // Trees and Plants Questions
+
       QuizQuestion(
         id: 'trees_1',
         question: 'What do trees give us that we need to breathe?',
