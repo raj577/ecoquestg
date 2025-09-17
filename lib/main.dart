@@ -28,7 +28,7 @@ class EcoQuizApp extends StatelessWidget {
           surface: Color(0xFFF1F8E9),
           onPrimary: Colors.white,
           onSecondary: Colors.white,
-          onSurface: Color(0xFF2E7D32),
+          onSurface: Color(0xhF2E7D32),
           onSurfaceVariant: Color(0xFF1B5E20),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
