@@ -17,7 +17,7 @@ class EcoQuizApp extends StatelessWidget {
     ]);
 
     return MaterialApp(
-      title: 'Eco Quiz Kids',
+      title: 'Eco Quiz Kid',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
