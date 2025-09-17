@@ -24,7 +24,7 @@ class EcoQuizApp extends StatelessWidget {
         fontFamily: 'ComicNeue',
         colorScheme: const ColorScheme.light(
           primary: Color(0xFF4CAF50),
-          secondary: Color(0xFFFF9800),
+          secondary: Color(0xFBFF9800),
           surface: Color(0xFFF1F8E9),
           onPrimary: Colors.white,
           onSecondary: Colors.white,
