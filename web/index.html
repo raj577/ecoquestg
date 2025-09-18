@@ -33,6 +33,25 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+
+
+
+  <script src="flutter_bootstrap.js" async>
+    // Paste your Firebase Configuration object here
+ const firebaseConfig = {
+   apiKey: "AIzaSyB5jsoH3m3amNmlTsXUI6n1MTEPx0eLYFs",
+   authDomain: "saged-24422.firebaseapp.com",
+   projectId: "saged-24422",
+   storageBucket: "saged-24422.firebasestorage.app",
+   messagingSenderId: "233348592044",
+   appId: "1:233348592044:web:b9d7344200fbe4ed6c0a09",
+   measurementId: "G-DXKKLBG9MB"
+ };
+
+ // Initialize Firebase
+ const app = firebase.initializeApp(firebaseConfig);
+ const analytics = firebase.analytics();
+ const auth = firebase.auth(); // Initialize Auth service
+  </script>
 </body>
 </html>

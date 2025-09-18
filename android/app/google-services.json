@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "233348592044",
+    "project_id": "saged-24422",
+    "storage_bucket": "saged-24422.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233348592044:android:5cc087b821bf3f456c0a09",
+        "android_client_info": {
+          "package_name": "com.example.eco_quiz_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrmPnyOtdzSaSgF0ZNz4ZS2QU9nt18UoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

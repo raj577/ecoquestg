@@ -1,8 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
-void main() {
+
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: kIsWeb
+        ? const FirebaseOptions(
+      apiKey: "AIzaSyDrmPnyOtdzSaSgF0ZNz4ZS2QU9nt18UoE",
+      appId: "1:233348592044:web:YOUR_WEB_APP_ID",
+      messagingSenderId: "233348592044",
+      projectId: "saged-24422",
+      authDomain: "saged-24422.firebaseapp.com",
+      storageBucket: "saged-24422.firebasestorage.app",
+    )
+        : const FirebaseOptions(
+      apiKey: "AIzaSyDrmPnyOtdzSaSgF0ZNz4ZS2QU9nt18UoE",
+      appId: "1:233348592044:android:5cc087b821bf3f456c0a09",
+      messagingSenderId: "233348592044",
+      projectId: "saged-24422",
+      storageBucket: "saged-24422.firebasestorage.app",
+    ),
+  );
   runApp(const EcoQuizApp());
 }
 
