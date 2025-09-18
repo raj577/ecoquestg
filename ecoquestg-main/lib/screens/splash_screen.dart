@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'registration_form.dart';
 import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -48,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen>
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                const HomeScreen(),
+                const RegistrationPage(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               return FadeTransition(opacity: animation, child: child);
@@ -57,7 +58,8 @@ class _SplashScreenState extends State<SplashScreen>
           ),
         );
       }
-    });
+    }
+    );
   }
 
   @override
