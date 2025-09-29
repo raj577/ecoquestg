@@ -1,3 +1,5 @@
+import 'package:eco_quiz_app/screens/ngopage.dart';
+import 'package:eco_quiz_app/screens/panelpage.dart';
 import 'package:eco_quiz_app/screens/registration_page.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -40,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen>
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                LoginPage(),
+                RoleSelectionApp(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               return FadeTransition(opacity: animation, child: child);
