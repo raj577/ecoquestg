@@ -1,3 +1,4 @@
+import 'package:eco_quiz_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'ngopage.dart';
@@ -56,13 +57,23 @@ class UserRoleSelectionScreen extends StatelessWidget {
       if (role == UserRole.ngo) {
         // Navigate to the NGOPage
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => NgoQuizApp()),
+          MaterialPageRoute(builder: (context) => LoginPage()),
         );
-      } else {
+      } else if (role == UserRole.teacher) {
         // Placeholder for other role navigation or generic dashboard
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(builder: (context) => const GenericDashboard(role: role)),
-        // );
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+      } else if (role == UserRole.teacher) {
+        // Placeholder for other role navigation or generic dashboard
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+      } else if (role == UserRole.student) {
+        // Placeholder for other role navigation or generic dashboard
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
       }
     });
   }
