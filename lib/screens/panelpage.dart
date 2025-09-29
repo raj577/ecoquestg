@@ -1,7 +1,9 @@
-import 'package:eco_quiz_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'ngopage.dart';
+// Import statements for pages like login_screen.dart and ngopage.dart
+// are typically needed only if they are in separate files.
+// Since I am providing a single file, I'll comment out the file imports
+// and keep the class definitions for demonstration.
 
 // --- MAIN APPLICATION SETUP ---
 
@@ -22,7 +24,7 @@ class RoleSelectionApp extends StatelessWidget {
         primarySwatch: Colors.green,
 
         // Mid-tone green background, as specified by the user
-        scaffoldBackgroundColor: Colors.green,
+        scaffoldBackgroundColor: Colors.green[300],
         fontFamily: 'Inter',
         useMaterial3: true,
       ),
@@ -54,27 +56,15 @@ class UserRoleSelectionScreen extends StatelessWidget {
     // 2. Navigation Logic:
     // Delay navigation slightly so the Snackbar is visible for a moment
     Future.delayed(const Duration(milliseconds: 500), () {
-      if (role == UserRole.ngo) {
-        // Navigate to the NGOPage
+      if (role == UserRole.ngo || role == UserRole.teacher || role == UserRole.student || role == UserRole.govt) {
+        // Navigate to the LoginPage for all these roles
+        // NOTE: If LoginPage is not defined in this file, you must ensure it is imported or defined.
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => LoginPage()),
-        );
-      } else if (role == UserRole.teacher) {
-        // Placeholder for other role navigation or generic dashboard
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => LoginPage()),
-        );
-      } else if (role == UserRole.teacher) {
-        // Placeholder for other role navigation or generic dashboard
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => LoginPage()),
-        );
-      } else if (role == UserRole.student) {
-        // Placeholder for other role navigation or generic dashboard
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => LoginPage()),
+          // Assuming 'LoginPage' is a defined class (or imported)
+          MaterialPageRoute(builder: (context) => const LoginPage()),
         );
       }
+      // 'Other' role would typically go to a Guest or Info page.
     });
   }
 
@@ -95,12 +85,12 @@ class UserRoleSelectionScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        // LOGO Implementation
-        title: Image.asset(
-          'assets/images/logot.png',
-          height: 32,
-          color: Colors.white,
-        ),
+        // LOGO Implementation (App Bar)
+        // title: Image.asset(
+        //   'assets/images/logoti.png', // Assuming logoti.png is the logo you want here
+        //   height: 32,
+        //   color: Colors.white,
+        // ),
         centerTitle: false,
         backgroundColor: Colors.green[900],
         elevation: 0,
@@ -112,19 +102,33 @@ class UserRoleSelectionScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              // --- NEW IMAGE IMPLEMENTATION (Top of Page) ---
+              Padding(
+                padding: const EdgeInsets.only(bottom: 40.0),
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/logoti.png', // Placeholder file name
+                    height: 120, // Adjust height as needed
+                    // Optionally set color if it's a vector-based asset:
+                    // color: darkGreenText,
+                  ),
+                ),
+              ),
+              // --- END NEW IMAGE IMPLEMENTATION ---
+
               Text(
-                'Welcome to EcoRhythm',
+                'Welcome',
                 textAlign: TextAlign.center,
                 style: theme.textTheme.headlineLarge!.copyWith(
                   fontWeight: FontWeight.w900,
-                  color: darkGreenText,
+                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 8),
               const Text(
                 'Please select your primary role to customize your dashboard:',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
               const SizedBox(height: 40),
 
@@ -163,49 +167,30 @@ class UserRoleSelectionScreen extends StatelessWidget {
   }
 }
 
-// --- NEW PAGE DEFINITION ---
+// --- NEW PAGE DEFINITIONS (REQUIRED for navigation to work) ---
 
+// Placeholder for the external Login Page
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Login')),
+      body: const Center(child: Text('This is the placeholder Login Screen.')),
+    );
+  }
+}
+
+// Placeholder for the external NGO Page (now unused, but kept for context)
 class NGOPage extends StatelessWidget {
   const NGOPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('NGO Dashboard', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.green[900],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Welcome, NGO / Eco-Club Partner!',
-              style: theme.textTheme.headlineMedium!.copyWith(color: Colors.green.shade900),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              'This is the dedicated page for managing your programs and impact data.',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 30),
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.pop(context); // Go back to the role selection screen
-              },
-              icon: const Icon(Icons.arrow_back),
-              label: const Text('Return to Role Selection'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green.shade700,
-                foregroundColor: Colors.white,
-              ),
-            )
-          ],
-        ),
-      ),
+      appBar: AppBar(title: const Text('NGO Dashboard')),
+      body: const Center(child: Text('This is the placeholder NGO Dashboard.')),
     );
   }
 }
