@@ -7,6 +7,23 @@ import 'category_screen.dart';
 import 'quiz_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+const String _targetUrl = 'https://chic-bombolone-cdcb31.netlify.app/';
+Future<void> _launchUrl(BuildContext context) async {
+  final Uri url = Uri.parse(_targetUrl);
+
+  // Check if the link can be opened before attempting to launch
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url, mode: LaunchMode.externalApplication);
+  } else {
+    // Show an error if the device cannot open the link
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Error: Could not open $_targetUrl'),
+      ),
+    );
+  }
+}
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -18,6 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
   final PageController _pageController = PageController();
 
   final List<Map<String, dynamic>> _features = [
+
+    {
+      'title': 'Modules',
+      'subtitle': 'Explore Environment Modules ',
+      'icon': Icons.flash_on,
+      'gradient': [const Color(0xFFFF6B6B), const Color(0xFFFF8E53)],
+    },
     {
       'title': 'Quick Quiz',
       'subtitle': 'Random questions from all topics',
@@ -33,6 +57,12 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'title': 'Challenge Mode',
       'subtitle': 'Test your eco knowledge',
+      'icon': Icons.emoji_events,
+      'gradient': [const Color(0xFFFFE66D), const Color(0xFFFF6B6B)],
+    },
+    {
+      'title': 'Games',
+      'subtitle': 'Learn while Playing',
       'icon': Icons.emoji_events,
       'gradient': [const Color(0xFFFFE66D), const Color(0xFFFF6B6B)],
     },
@@ -246,11 +276,28 @@ class _HomeScreenState extends State<HomeScreen> {
               subtitle: _features[1]['subtitle'],
               icon: _features[1]['icon'],
               gradient: _features[1]['gradient'],
-              onTap: () => _navigateToCategories(),
+              onTap: () => _startQuickQuiz(),
             ),
             const SizedBox(height: 16),
             _buildFeatureCard(
+              title: _features[3]['title'],
+              subtitle: _features[3]['subtitle'],
+              icon: _features[3]['icon'],
+              gradient: _features[3]['gradient'],
+              onTap: () => _navigateToCategories(),
+            ),
+
+            const SizedBox(height: 16),
+            _buildFeatureCard(
               title: _features[2]['title'],
+              subtitle: _features[2]['subtitle'],
+              icon: _features[2]['icon'],
+              gradient: _features[2]['gradient'],
+              onTap: () => _startChallengeMode(),
+            ),
+            const SizedBox(height: 16),
+            _buildFeatureCard(
+              title: _features[1]['title'],
               subtitle: _features[2]['subtitle'],
               icon: _features[2]['icon'],
               gradient: _features[2]['gradient'],
@@ -355,12 +402,15 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Column(
         children: [
-          Text(
-            'Your Eco Impact',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).colorScheme.onSurface,
+          GestureDetector(
+            onTap: () => _launchUrl(context),
+            child: Text(
+              'Your Eco Impact',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
             ),
           ),
 
@@ -369,9 +419,10 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildStatItem('Quizzes', '0', Icons.quiz, Colors.blue),
-              _buildStatItem('Score', '0%', Icons.star, Colors.orange),
-              _buildStatItem('Streak', '0', Icons.local_fire_department, Colors.red),
+              _buildStatItem('Quizzes', '20', Icons.quiz, Colors.blue),
+              _buildStatItem('Score', '60%', Icons.star, Colors.orange),
+              _buildStatItem('Streak', '5', Icons.local_fire_department, Colors.red),
+
             ],
           ),
         ],
