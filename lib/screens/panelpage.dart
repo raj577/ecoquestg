@@ -1,3 +1,5 @@
+import 'package:eco_quiz_app/screens/login_screen.dart';
+import 'package:eco_quiz_app/screens/ngopage.dart';
 import 'package:flutter/material.dart';
 
 // Import statements for pages like login_screen.dart and ngopage.dart
@@ -35,7 +37,7 @@ class RoleSelectionApp extends StatelessWidget {
 
 // --- USER ROLE SELECTION SCREEN ---
 
-enum UserRole { teacher, student, ngo, govt, other }
+enum UserRole { teacher, student, ngo, cityadmin, other }
 
 class UserRoleSelectionScreen extends StatelessWidget {
   const UserRoleSelectionScreen({super.key});
@@ -56,16 +58,43 @@ class UserRoleSelectionScreen extends StatelessWidget {
     // 2. Navigation Logic:
     // Delay navigation slightly so the Snackbar is visible for a moment
     Future.delayed(const Duration(milliseconds: 500), () {
-      if (role == UserRole.ngo || role == UserRole.teacher || role == UserRole.student || role == UserRole.govt) {
+      if (role == UserRole.ngo) {
         // Navigate to the LoginPage for all these roles
         // NOTE: If LoginPage is not defined in this file, you must ensure it is imported or defined.
         Navigator.of(context).push(
           // Assuming 'LoginPage' is a defined class (or imported)
-          MaterialPageRoute(builder: (context) => const LoginPage()),
+          MaterialPageRoute(builder: (context) =>  NgoQuizApp()),
+        );
+      } else if (role == UserRole.teacher) {
+        // 'Other' role would typically go to a Guest or Info page.
+        Navigator.of(context).push(
+          // Assuming 'LoginPage' is a defined class (or imported)
+          MaterialPageRoute(builder: (context) =>  LoginPage()),
         );
       }
-      // 'Other' role would typically go to a Guest or Info page.
-    });
+      else if (role == UserRole.student) {
+        // 'Other' role would typically go to a Guest or Info page.
+        Navigator.of(context).push(
+          // Assuming 'LoginPage' is a defined class (or imported)
+          MaterialPageRoute(builder: (context) =>  LoginPage()),
+        );
+      }
+      else if (role == UserRole.other) {
+        // 'Other' role would typically go to a Guest or Info page.
+        Navigator.of(context).push(
+          // Assuming 'LoginPage' is a defined class (or imported)
+          MaterialPageRoute(builder: (context) =>  LoginPage()),
+        );
+      }
+      else if (role == UserRole.cityadmin) {
+        // 'Other' role would typically go to a Guest or Info page.
+        Navigator.of(context).push(
+          // Assuming 'LoginPage' is a defined class (or imported)
+          MaterialPageRoute(builder: (context) =>  LoginPage()),
+        );
+      }
+    }
+    );
   }
 
   @override
@@ -79,7 +108,7 @@ class UserRoleSelectionScreen extends StatelessWidget {
       UserRole.teacher: {'text': 'Teacher', 'icon': Icons.school},
       UserRole.student: {'text': 'Student', 'icon': Icons.person},
       UserRole.ngo: {'text': 'NGO / Eco-Club', 'icon': Icons.people},
-      UserRole.govt: {'text': 'Government / City Admin', 'icon': Icons.account_balance},
+      UserRole.cityadmin: {'text': 'Government / City Admin', 'icon': Icons.account_balance},
       UserRole.other: {'text': 'Other / Guest', 'icon': Icons.more_horiz},
     };
 
@@ -170,17 +199,17 @@ class UserRoleSelectionScreen extends StatelessWidget {
 // --- NEW PAGE DEFINITIONS (REQUIRED for navigation to work) ---
 
 // Placeholder for the external Login Page
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
-      body: const Center(child: Text('This is the placeholder Login Screen.')),
-    );
-  }
-}
+// class LoginPage extends StatelessWidget {
+//   const LoginPage({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('Login')),
+//       body: const Center(child: Text('This is the placeholder Login Screen.')),
+//     );
+//   }
+// }
 
 // Placeholder for the external NGO Page (now unused, but kept for context)
 class NGOPage extends StatelessWidget {

@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               // Logo
               // Make sure you have the 'assets/images/logo.png' file in your project
-              Image.asset('assets/images/logo.png', height: 100),
+              Image.asset('assets/images/logoti.png', height: 100),
               const SizedBox(height: 16),
               const Text(
                 'Sustainable and Gamified\nEnvironmental-education',
